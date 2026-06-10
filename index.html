@@ -95,29 +95,133 @@
 
     <script>
         // --- 1. DATABASE PENGGUNA ---
-        // Lo tinggal tambahin 20 data di sini. Kunci sebelah kiri (contoh: "nuzulia") adalah yang dipakai di URL.
+        // Lo tinggal tambahin data di sini. Kunci sebelah kiri (contoh: "nuzulia", "andi") adalah yang dipakai di URL.
         const database = {
             "nuzulia": {
-                name: "Nuzulia Syarifah, Amd.Rad", 
-                nik: "3328012345678901", 
-                gender: "Perempuan",
-                company: "RSU Islam Harapan Anda Tegal",
-                email: "nuzulia.syarifah@gmail.com", 
-                phone: "0877-7469-3210", 
-                role: "Radiografer", 
+                name: "Nuzulia Syarifah, Amd.Rad", nik: "3328012345678901", gender: "Perempuan",
+                company: "RSU Islam Harapan Anda Tegal", email: "nuzulia.syarifah@gmail.com", phone: "087774693210", role: "Radiografer", 
                 photo: "https://placehold.co/150x150/4f46e5/ffffff?text=NS" 
             },
             "zahirin": {
-                name: "Zahirin Dwi Ardianto. S.Kep.Ns", 
-                nik: "3328098765432109", 
-                gender: "Laki-laki",
-                company: "RSUI HARAPAN ANDA TEGAL",
-                email: "dwiasmara61@gmail.com", 
-                phone: "0878-7559-5096", 
-                role: "Perawat cathlab", 
+                name: "Zahirin Dwi Ardianto. S.Kep.Ns", nik: "3328098765432109", gender: "Laki-laki",
+                company: "RSUI HARAPAN ANDA TEGAL", email: "dwiasmara61@gmail.com", phone: "087875595096", role: "Perawat cathlab", 
                 photo: "https://placehold.co/150x150/4f46e5/ffffff?text=ZD" 
+            },
+            "andi": {
+                name: "Andi Tyas Mohan Maulana.S.Kep.Ners", nik: "3328123400010001", gender: "Laki-laki",
+                company: "RSU Islam Harapan Anda Kota Tegal", email: "andimohan88@gmail.com", phone: "085800801988", role: "Perawat Cathlab", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AT"
+            },
+            "alnindhika": {
+                name: "Alnindhika Rizki Putri", nik: "3328123400020002", gender: "Perempuan",
+                company: "SMC RS Telogorejo Semarang", email: "alnindhika@gmail.com", phone: "085697327725", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AR"
+            },
+            "ayu": {
+                name: "Ayu bintang tinara", nik: "3328123400030003", gender: "Perempuan",
+                company: "Rs Prima Husada", email: "ayubintang0995@gmail.com", phone: "082336475042", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AB"
+            },
+            "adinda": {
+                name: "Adinda riza febrianti", nik: "3328123400040004", gender: "Perempuan",
+                company: "Rs prima husada sukorejo", email: "adindarizafebrianti02@gmail.com", phone: "0895359651313", role: "Radiologi", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AR"
+            },
+            "angga": {
+                name: "Angga Ardianto", nik: "3328123400050005", gender: "Laki-laki",
+                company: "RSA UGM - CathLab", email: "angga_ardianto@ugm.ac.id", phone: "085201001855", role: "Perawat", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AA"
+            },
+            "dwi": {
+                name: "Dwi putri handayani", nik: "3328123400060006", gender: "Perempuan",
+                company: "RSA UGM", email: "aiz.putri@gmail.com", phone: "085640822995", role: "perawat", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=DP"
+            },
+            "desta": {
+                name: "Desta Ibnu Prabowo", nik: "3328123400070007", gender: "Laki-laki",
+                company: "Rs Akademik UGM", email: "destaibnu.dip@gmail.com", phone: "081903931309", role: "Radiografer Pelaksana", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=DI"
+            },
+            "arief": {
+                name: "Muhammad Arief Sulistyo", nik: "3328123400080008", gender: "Laki-laki",
+                company: "RSA UGM", email: "muhammad.arief.s@ugm.ac.id", phone: "085157475252", role: "Radiografer cathlab", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=MA"
+            },
+            "danu": {
+                name: "Dwija Danu Tirta", nik: "3328123400090009", gender: "Laki-laki",
+                company: "Radiologi RSA UGM", email: "danutirta97@gmail.com", phone: "083128072024", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=DD"
+            },
+            "septiana": {
+                name: "Sri Septiana Wulandari", nik: "3328123400100010", gender: "Perempuan",
+                company: "RSA UGM", email: "Septiana_Wulandari@ugm.ac.id", phone: "081393079393", role: "Perawat", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=SS"
+            },
+            "raditya": {
+                name: "Raditya Archam", nik: "3328123400110011", gender: "Laki-laki",
+                company: "RSA UGM", email: "radityaarc@gmail.com", phone: "084729900676", role: "Perawat pelaksana", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=RA"
+            },
+            "ananda": {
+                name: "Ananda Enggal Prawesti, A.Md.Kes.(Rad)", nik: "3328123400120012", gender: "Perempuan",
+                company: "RSUD Sunan Kalijaga Kabupaten Demak", email: "anandaenggal98@gmail.com", phone: "085647803798", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AE"
+            },
+            "ratna": {
+                name: "Ratna sugiyanti", nik: "3328123400130013", gender: "Perempuan",
+                company: "Rsud sunan kalijaga", email: "Ratnasugiyanti382@gmail.com", phone: "089667350768", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=RS"
+            },
+            "yoga": {
+                name: "Yoga Nugroho", nik: "3328123400140014", gender: "Laki-laki",
+                company: "RSUD dr. R. Goeteng Taroenadibrata", email: "yoganug98@gmail.com", phone: "085600506362", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=YN"
+            },
+            "retno": {
+                name: "Retno Agustiningtyas,S.Kep.Ns", nik: "3328123400150015", gender: "Perempuan",
+                company: "RSUD dr.R.Goeteng Taroenadibrata Purbalingga", email: "retnoagustiningtyas79@gmail.com", phone: "081373871195", role: "Perawat Radiologi", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=RA"
+            },
+            "chanafi": {
+                name: "CHANAFI SETYANA PUTRA, S.Tr.Kes.(Rad)", nik: "3328123400160016", gender: "Laki-laki",
+                company: "RSUD CILACAP", email: "maspaijo233@gmail.com", phone: "081327507686", role: "Radiografer RDI", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=CS"
+            },
+            "anton": {
+                name: "Anton Raharjo", nik: "3328123400170017", gender: "Laki-laki",
+                company: "Rsa ugm", email: "antonraharjo@ugm.ac.id", phone: "081217774885", role: "Teknisi Elekteomedis", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AR"
+            },
+            "evrin": {
+                name: "Evrin Isna Nur Kuncara", nik: "3328123400180018", gender: "Perempuan",
+                company: "RS JIH Yogyakarta", email: "evrin.poltekkes@gmail.com", phone: "085742347644", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=EI"
+            },
+            "ilham": {
+                name: "Ilham Nur Luthfi", nik: "3328123400190019", gender: "Laki-laki",
+                company: "RSI Sultan Agung Semarang", email: "luthfi.ilhamnur@gmail.com", phone: "085641277898", role: "Pelaksana", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=IN"
+            },
+            "andreas": {
+                name: "Andreas Rian Aprilino Lengkong", nik: "3328123400200020", gender: "Laki-laki",
+                company: "RS Pantih Rapih Yogyakarta", email: "andreaprilinod91@gmail.com", phone: "081903854536", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=AR"
+            },
+            "hangga": {
+                name: "B Hangga Harinawantara", nik: "3328123400210021", gender: "Laki-laki",
+                company: "Radiologi RSA UGM", email: "hangga.hari@gmail.com", phone: "085725807797", role: "Dokter spesialis radiologi", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=BH"
+            },
+            "hanna": {
+                name: "dr. Siti Hanna Armarandra, Sp.JP", nik: "3328123400220022", gender: "Perempuan",
+                company: "RSA UGM", email: "armarandra@gmail.com", phone: "082133061989", role: "Dokter spesialis", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=SH"
+            },
+            "sigit": {
+                name: "Nur Sigit Mujiharjo", nik: "3328123400230023", gender: "Laki-laki",
+                company: "RS Akademik UGM", email: "sigidrahardjo@ugm.ac.id", phone: "085161135669", role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=NS"
             }
-            // Tambahin data ke-3 sampai 20 di bawah sini dengan format yang sama...
         };
 
         // --- 2. TAMPILKAN DATA BERDASARKAN LINK (URL) ---
