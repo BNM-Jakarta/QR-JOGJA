@@ -94,26 +94,59 @@
     </main>
 
     <script>
-        // --- DATA PENGGUNA ---
-        const userData = { 
-            name: "Nuzulia Syarifah, Amd.Rad", 
-            id: "VIS-20260610-001", 
-            company: "RSU Islam Harapan Anda Tegal", 
-            role: "Radiografer", 
-            nik: "3328123456789012", 
-            gender: "Perempuan", 
-            phone: "0877-7469-3210", 
-            email: "nuzulia.syarifah@gmail.com",
-            photo: "https://placehold.co/150x150/4f46e5/ffffff?text=NS" 
+        // --- 1. DATABASE PENGGUNA ---
+        // Lo tinggal tambahin 20 data di sini. Kunci sebelah kiri (contoh: "nuzulia") adalah yang dipakai di URL.
+        const database = {
+            "nuzulia": {
+                name: "Nuzulia Syarifah, Amd.Rad", 
+                nik: "3328012345678901", 
+                gender: "Perempuan",
+                company: "RSU Islam Harapan Anda Tegal",
+                email: "nuzulia.syarifah@gmail.com", 
+                phone: "0877-7469-3210", 
+                role: "Radiografer", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=NS" 
+            },
+            "zahirin": {
+                name: "Zahirin Dwi Ardianto. S.Kep.Ns", 
+                nik: "3328098765432109", 
+                gender: "Laki-laki",
+                company: "RSUI HARAPAN ANDA TEGAL",
+                email: "dwiasmara61@gmail.com", 
+                phone: "0878-7559-5096", 
+                role: "Perawat cathlab", 
+                photo: "https://placehold.co/150x150/4f46e5/ffffff?text=ZD" 
+            }
+            // Tambahin data ke-3 sampai 20 di bawah sini dengan format yang sama...
         };
 
-        // --- TAMPILKAN DATA ---
+        // --- 2. TAMPILKAN DATA BERDASARKAN LINK (URL) ---
         function loadUserData() {
-            // Mengisi data ke HTML berdasarkan ID
+            // Ambil parameter '?id=...' dari link website
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get('id');
+
+            // Default: kalau link dibuka polosan tanpa ?id=, kita tampilin Zahirin (atau kosongin juga bisa)
+            let userData = database["zahirin"]; 
+
+            // Kalau di link ada ?id= dan id-nya ada di database kita
+            if (userId && database[userId]) {
+                userData = database[userId];
+            } else if (userId && !database[userId]) {
+                // Kalau orang asal ketik ?id=ngawur
+                document.getElementById('my-name').innerText = "Data Tidak Ditemukan";
+                document.getElementById('my-role').innerText = "-";
+                document.getElementById('my-company').innerText = "-";
+                return; // Stop proses
+            }
+
+            // Masukkan data ke HTML
             document.getElementById('my-name').innerText = userData.name;
-            document.getElementById('my-id').innerText = userData.id;
-            document.getElementById('my-company').innerText = userData.company;
             document.getElementById('my-role').innerText = userData.role;
+            document.getElementById('my-company').innerText = userData.company;
+            
+            document.getElementById('my-id').innerText = "ID: " + userData.nik.substring(0, 4) + "-" + Math.floor(Math.random() * 10000);
+            
             document.getElementById('my-nik').innerText = userData.nik;
             document.getElementById('my-gender').innerText = userData.gender;
             document.getElementById('my-phone').innerText = userData.phone;
@@ -121,9 +154,11 @@
             document.getElementById('my-photo').src = userData.photo;
         }
 
-        // Jalankan fungsi saat halaman dimuat
+        // Initialize on load
         window.onload = () => {
             loadUserData();
         };
+
     </script>
 </body>
+</html>
